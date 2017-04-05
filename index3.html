@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>我爱你</title>
+<style type="text/css">
+<!--
+.STYLE1 {
+ font-size: 21px;
+ color: #FF00FF;
+}
+-->
+</style>
+</head>
+<body>
+<script language="JavaScript1.2">
+var it=0
+function initialize(){
+mytext=typing.innerText
+var myheight=typing.offsetHeight
+typing.innerText=''
+document.all.typing.style.height=myheight
+document.all.typing.style.visibility="visible"
+typeit()
+}
+function typeit(){
+typing.insertAdjacentText("beforeEnd",mytext.charAt(it))
+if (it<mytext.length-1){
+it++
+setTimeout("typeit()",100)
+}
+else
+return
+}
+if (document.all)
+document.body.onload=initialize
+</script>
+<table width="75%" border="0" align="center">
+ <tr>
+  <td align="center"><span class="STYLE1" id="typing" style="visibility:hidden" align="center">在这里输入你写好的文章
+</span></td>
+ </tr></table>
+</body>
+</html>
